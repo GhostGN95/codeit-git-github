@@ -36,5 +36,11 @@
 - 스크롤: 화살표 다운 키
 - q: 종료
 
-6. 다른 저장 상태로 돌아가보자.
+6. 다른 저장 기록으로 이동하기
 - git checkout [커밋아이디]
+- git checkout [브랜치이름]
+
+7. 브랜치를 만들어보자
+- git branch
+- git branch [브랜치이름]
+- git config --global init.defaultBranch [기본브랜치이름]
