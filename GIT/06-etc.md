@@ -13,4 +13,6 @@
       - git checkout -t origin/develop
         - origin/develop과 동일한 범위를 갖는 develop 브랜치를 생성하고 체크아웃
       - 작업을 진행한다.
-      
+
+## pull
+- 11
