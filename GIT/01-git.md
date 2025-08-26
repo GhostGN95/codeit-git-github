@@ -10,8 +10,11 @@
 
 ## 깃 사용자 설정
 - git config --list
-- git config --global user.eamil "wcxie1234@gmail.com"
+- git config --global user.email "wcxie1234@gmail.com"
 - git config --global user.name "GhostGN95"
+  - 만약 --global로 전역 설정에 입력했음에도 안 될 경우엔 로컬로도 입력해주자
+    - git config user.email "wcxie1234@gmail.com"
+    - git config user.name "GhostGN95"
 - git config --global init.defaultBranch main
 
 ## 깃 사용 방법
