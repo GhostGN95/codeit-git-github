@@ -9,8 +9,9 @@
 - 맥: Homebrew를 이용해서 설치
 
 ## 깃 사용자 설정
-- git config --global user.name "GhostGN95"
 - git config --global user.eamil "wcxie1234@gmail.com"
+- git config --global user.name "GhostGN95"
+- git config --global init.defaultBranch main
 
 ## 깃 사용 방법
 1. 프로젝트 디렉토리를 깃으로 관리하기 시작한다.
@@ -18,32 +19,43 @@
 - .git 폴더가 생성된다(숨김 폴더)
 
 2. 깃으로 관리하는 프로젝트 디렉토리는 아래의 3단계로 구분된다.
-- 워킹디렉토리(디렉토리)
+- 워킹 디렉토리(디렉토리)
+  - Tracked 파일 및 폴더: 스테이징 에어리어에 기록된 파일 및 폴더
+  - UnTracked 파일 및 폴더: Tracked 파일 및 폴더를 제외한 나머지 전부
 - 스테이징 에어리어(SA)
-- 리포지토리
+- 로컬 리포지토리
 
 3. 현재 프로젝트 폴더의 상태를 파악해보자
 - git status
-  - 1. 리포지토리와 스테이징 에어리어의 차이를 보여줍니다.
-  - 2. 스테이징 에어리어와 Tracked 파일들의 차이를 보여줍니다.
+  - 1. 로컬 리포지토리와 스테이징 에어리어의 차이를 보여줍니다.
+  - 2. 스테이징 에어리어와 워킹 디렉토리의 Tracked 파일들의 차이를 보여줍니다.
   - 3. UnTracked 파일들을 보여줍니다.
 
 4. 현재 프로젝트 폴더 상태를 저장해보자.
-- git commit -m "1"
+- git add .
+- git commit -m "메세지"
+- 메세지를 잘 쓰는 방법: 팀에서 논의해서 결정한다.
 
 5. 저장된 기록을 확인해보자.
 - git log
+- git log --graph -all(이제는 딱히 쓸 일이 없다)
 - 스크롤: 화살표 다운 키
 - q: 종료
 
 6. 다른 저장 기록으로 이동하기
-- git checkout [커밋아이디]
+- checkout: HEAD를 이동시킨다.
 - git checkout [브랜치이름]
+  - HEAD가 브랜치를 가리킨다.
+- git checkout [커밋아이디]
+  - HEAD가 특정 커밋을 가리킨다.
+  - HEAD가 브랜치에서 이탈(detached)했다.
 
 7. 브랜치를 만들어보자
-- git branch
-- git branch [브랜치이름]
-- git config --global init.defaultBranch [기본브랜치이름]
+- git branch: 현재 어떤 브랜치들이 있고, 어느 브랜치에 있는 지 확인할 수 있다.
+- git branch [브랜치이름]: 브랜치 생성
+- 브랜치의 범위
+  - 브랜치 화살표가 가리키는 마지막 커밋으로부터
+  - 찾을 수 있는 모든 부모 커밋을 전부 포함한다.
 
 8. 브랜치를 병합해보자.
 - git merge [합칠브랜치이름]
@@ -54,6 +66,10 @@
   - base인 5를 기준으로 [합칠브랜치이름] 브랜치의 7, 8 만큼의 차이를
     - 1단계: 워킹 디렉토리, 스테이징 에어리어에 복사한다.
     - 2단계: 스테이징 에어리어에 내용을 그대로 저장하는 커밋을 새롭게 생성한다.
+  - 퀴즈
+    - merge가 완료된 후 main 브랜치의 커밋 개수는? : 7개
+    - merge가 완료된 후 sub 브랜치의 커밋 개수는? : 5개
+    - sub 브랜치를 삭제한 후 main 브랜치의 커밋 개수는? : 7개
 - 케이스2: fast-forward merge: 새로운 커밋이 생기지 않고 브랜치 범위만 변경된다.
   - 나는 1 ~ 11
   - 친구는 1 ~ 11 + 12, 13
