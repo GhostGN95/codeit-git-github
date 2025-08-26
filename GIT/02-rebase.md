@@ -1,6 +1,6 @@
 # Rebase
 
-## git rebase [master]
+## git rebase master
 - 특징
   - 3 way merge가 예상되는 상황인 경우, 커밋 히스토리를 깔끔하게 유지하기 위해서 사용한다.
 - 작업 진행
