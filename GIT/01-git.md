@@ -9,6 +9,7 @@
 - 맥: Homebrew를 이용해서 설치
 
 ## 깃 사용자 설정
+- git config --list
 - git config --global user.eamil "wcxie1234@gmail.com"
 - git config --global user.name "GhostGN95"
 - git config --global init.defaultBranch main

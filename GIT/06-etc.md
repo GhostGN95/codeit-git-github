@@ -15,4 +15,30 @@
       - 작업을 진행한다.
 
 ## pull
-- 11
+- git pull origin develop --revase
+  - git fetch origin develop
+  - git rebase origin/develop: 충돌이 날 수 있다
+
+- git pull origin develop --no-rebase
+  - git fetch origin develop
+  - git merge origin/develop
+    - 3-way-merge가 되거나: 충돌이 날 수 있다
+    - fast-forward-merge가 되거나: 충돌이 날 수 없다
+
+- git pull origin develop --ff-only
+  - git fetch origin develop
+  - git merge origin/develop: 반드시 fast-forward-merge
+
+- 결론
+  - git config pull.rebase true 1회 설정
+  - git pull origin develop
+  - 만약 충돌이 발생한 경우, 충돌을 해결한 후에 add를 진행하고
+    - git rebase --continue
+
+  - git config pull.rebase flase 1회 설정
+  - git pull origin develop
+  - 만약 충돌이 발생한 경우, 충돌을 해결한 후에 add를 진행하고
+    - git rebase --continue
+    -수동으로 커밋을 추가로 진행해야 합니다.
+
+## gitignore
